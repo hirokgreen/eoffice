@@ -1,5 +1,6 @@
 import React from 'react';
 import ListItems from '../ListItems';
+import CreateEmployee from './addEmployee';
 
 
 class EmployeeBase extends React.Component {
@@ -34,16 +35,32 @@ class EmployeeBase extends React.Component {
                     "age": 29
                 }
             ]
-        }
+        };
+        this.addEmployee = this.addEmployee.bind(this)
+    }
+
+    addEmployee = (object) => {
+        object.id = Math.floor(Math.random() * 1000);
+        object.age = parseInt(object.age);
+        this.setState({
+            employees: [...this.state.employees, object]
+        });
     }
 
     render() {
 
         return (
             <div className="content">
-                <h3>Employee List</h3>
+                <div className="row">
+                    <div className="col-6">
+                        <h3>Employees</h3>
+                    </div>
+                    <div className="col-6">
+                        <CreateEmployee addEmployee={this.addEmployee}/>
+                    </div>
+                </div>
                 <div className="table">
-                    <ListItems employees={this.state.employees} />
+                    <ListItems employees={this.state.employees}/>
                 </div>
             </div>
         )
