@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItems from '../ListItems';
-import CreateEmployee from './addEmployee';
+import CreateEmployee from './AddEmployee';
 
 
 class EmployeeBase extends React.Component {
@@ -37,15 +37,23 @@ class EmployeeBase extends React.Component {
             ]
         };
         this.addEmployee = this.addEmployee.bind(this)
+        this.deleteEmployee = this.deleteEmployee.bind(this)
     }
 
-    addEmployee = (object) => {
-        object.id = Math.floor(Math.random() * 1000);
-        object.age = parseInt(object.age);
+    addEmployee = (employee) => {
+        employee.id = Math.floor(Math.random() * 1000);
+        employee.age = parseInt(employee.age);
         this.setState({
-            employees: [...this.state.employees, object]
+            employees: [...this.state.employees, employee]
         });
     }
+
+    deleteEmployee = (employeeId) => {
+        const employees = this.state.employees;
+        this.setState({
+            employees: employees.filter((employee, index) => employee.id !== employeeId)
+        });
+    };
 
     render() {
 
@@ -60,7 +68,7 @@ class EmployeeBase extends React.Component {
                     </div>
                 </div>
                 <div className="table">
-                    <ListItems employees={this.state.employees}/>
+                    <ListItems employees={this.state.employees} deleteEmployee={this.deleteEmployee}/>
                 </div>
             </div>
         )

@@ -13,7 +13,9 @@ class CreateEmployee extends React.Component {
     }
 
     handleSubmit = (event) => {
-        this.props.addEmployee(this.state);
+        if (this.state.name && this.state.age) {
+            this.props.addEmployee(this.state);
+        }
     }
 
     handleChange = (event) => {

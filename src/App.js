@@ -5,7 +5,7 @@ import EmployeeBase from './components/EmployeeBase';
 function App() {
   return (
     <div className="container p-3">
-      <EmployeeBase/>
+      <EmployeeBase />
     </div>
   );
 }

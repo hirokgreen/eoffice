@@ -11,12 +11,16 @@ class ListItems extends React.Component {
         this.deleteEmployee = this.deleteEmployee.bind(this)
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.employees !== this.props.employees) {
+            this.setState({
+                employees: this.props.employees
+            });
+        }
+    }
+
     deleteEmployee = (event) => {
-        const id = parseInt(event.target.value);
-        const employees = this.state.employees;
-        this.setState({
-            employees: employees.filter((employee, index) => employee.id !== id)
-        });
+        this.props.deleteEmployee(parseInt(event.target.value));
     }
 
     render() {
