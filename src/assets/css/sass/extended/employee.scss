@@ -1,0 +1,8 @@
+.employee {
+    .list-content .list-item:nth-of-type(odd) div {
+        background-color: #dee2e6;
+    }
+    .list-content .list-item:nth-of-type(even) div {
+        background-color: honeydew;
+    }
+}

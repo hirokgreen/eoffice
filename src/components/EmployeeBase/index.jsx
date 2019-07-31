@@ -58,13 +58,13 @@ class EmployeeBase extends React.Component {
     render() {
 
         return (
-            <div className="content">
+            <div className="content employee">
                 <div className="row">
                     <div className="col-6">
                         <h3>Employees</h3>
                     </div>
                     <div className="col-6">
-                        <CreateEmployee addEmployee={this.addEmployee}/>
+                        <CreateEmployee addEmployee={this.addEmployee} employees={this.state.employees}/>
                     </div>
                 </div>
                 <div className="table">

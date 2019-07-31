@@ -26,15 +26,17 @@ class ListItems extends React.Component {
     render() {
 
         const items = this.state.employees.map((employee, index) =>
-            <div className="row py-1" key={employee.id}>
-                <div className="col-4">
-                    {employee.name}
-                </div>
-                <div className="col-4">
-                    {employee.age}
-                </div>
-                <div className="col-4">
-                    <button value={employee.id} onClick={this.deleteEmployee}>X</button>
+            <div className="list-item">
+                <div className="row py-1" key={employee.id}>
+                    <div className="col-4">
+                        {employee.name}
+                    </div>
+                    <div className="col-4">
+                        {employee.age}
+                    </div>
+                    <div className="col-4 text-right">
+                        <button value={employee.id} onClick={this.deleteEmployee}>X</button>
+                    </div>
                 </div>
             </div>
         );
@@ -48,7 +50,7 @@ class ListItems extends React.Component {
                     <div className="col-4">
                         <strong>Age</strong>
                     </div>
-                    <div className="col-4">
+                    <div className="col-4 text-right">
                         <strong>Action</strong>
                     </div>
                 </div>
