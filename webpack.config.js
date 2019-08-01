@@ -7,6 +7,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
+        alias: {
+            Components: path.resolve(__dirname, './src/Components/'),
+            Pages: path.resolve(__dirname, './src/Pages/'),
+            Redux: path.resolve(__dirname, './src/Redux/'),
+        },
         extensions: ['.jsx', '.js']
     },
     devServer: {

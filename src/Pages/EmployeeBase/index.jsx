@@ -1,6 +1,6 @@
 import React from 'react';
-import ListItems from '../ListItems';
-import CreateEmployee from './AddEmployee';
+import ListItems from 'Components/Employees/ListItems';
+import CreateEmployee from 'Components/Employees/AddEmployee';
 
 
 class EmployeeBase extends React.Component {

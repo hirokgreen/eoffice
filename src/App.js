@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../src/assets/sass/main.scss';
-import EmployeeBase from './components/EmployeeBase';
-import Home from './components/Home';
-import ContactUs from './components/Contact'
+import EmployeeBase from 'Pages/EmployeeBase';
+import Home from 'Pages/Home';
+import ContactUs from 'Pages/Contact'
+import EmployeeReduxBase from 'Pages/EmployeeReduxBase'
 
 function App() {
 	return (
@@ -30,6 +31,14 @@ function App() {
 						</li>
 						<li className="nav-item">
 							<NavLink
+								to="/redux-employees"
+								activeClassName="active"
+								className="nav-link">
+									Employees (Redux)
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink
 								to="/contact"
 								activeClassName="active"
 								className="nav-link">
@@ -46,6 +55,9 @@ function App() {
 				<Route
 					path="/employees/"
 					component={EmployeeBase} />
+				<Route
+					path="/redux-employees/"
+					component={EmployeeReduxBase} />
 				<Route
 					path="/contact/"
 					component={ContactUs} />
