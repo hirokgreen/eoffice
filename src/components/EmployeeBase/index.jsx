@@ -64,11 +64,15 @@ class EmployeeBase extends React.Component {
                         <h3>Employees</h3>
                     </div>
                     <div className="col-6">
-                        <CreateEmployee addEmployee={this.addEmployee} employees={this.state.employees}/>
+                        <CreateEmployee
+                            addEmployee={this.addEmployee}
+                            employees={this.state.employees} />
                     </div>
                 </div>
                 <div className="table">
-                    <ListItems employees={this.state.employees} deleteEmployee={this.deleteEmployee}/>
+                    <ListItems
+                        employees={this.state.employees}
+                        deleteEmployee={this.deleteEmployee} />
                 </div>
             </div>
         )
