@@ -38,10 +38,9 @@ const EmployeeReducer = (state = initState, action) => {
         case ActionList.EmployeeList:
             return action
         case ActionList.AddEmployee:
-            let newItem = action.payload;
-            newItem.id = Math.floor(Math.random() * 1000);
-            newItem.age = parseInt(newItem.age);
-            return [...state.data, newItem]
+            return action
+        case ActionList.DeleteEmployee:
+            return action
         default:
             return state
     }

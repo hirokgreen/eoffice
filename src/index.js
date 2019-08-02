@@ -6,10 +6,10 @@ import RootReducer from 'Redux/Reducers/RootReducer';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
-const Store = createStore(RootReducer)
+export const store = createStore(RootReducer)
 
 ReactDOM.render(
-    <Provider store={Store}>
+    <Provider store={store}>
          <App />
     </Provider>, document.getElementById('root')
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItems from 'Components/Employees/ListItems';
 import CreateEmployee from 'Components/Employees/AddEmployee';
+import GoBack from 'Components/GoHome'
 
 
 class EmployeeBase extends React.Component {
@@ -59,6 +60,7 @@ class EmployeeBase extends React.Component {
 
         return (
             <div className="content employee">
+                <GoBack />
                 <div className="row">
                     <div className="col-6">
                         <h3>Employees</h3>

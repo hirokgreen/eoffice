@@ -1,6 +1,15 @@
-export const addEmployee = (payload) => {
+import { ActionList } from 'Redux/Constants/ActionList';
+
+export const addEmployee = (data) => {
     return {
-        type: 'ADD_EMPLOYEE',
-        payload: payload
+        type: ActionList.AddEmployee,
+        data: data
     }
 };
+
+export const deleteEmployee = (data) => {
+    return {
+        type: ActionList.DeleteEmployee,
+        data: data
+    }
+}

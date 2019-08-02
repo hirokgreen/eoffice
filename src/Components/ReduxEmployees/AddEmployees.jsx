@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 
 import {addEmployee} from "Redux/Actions/Employee";
+import {AddEmployeeHelper} from "Redux/Providers"
 
 class CreateEmployee extends React.Component {
 
@@ -58,7 +59,8 @@ class CreateEmployee extends React.Component {
         })
         if (this.state.name && this.state.age) {
             if (this.validateEmployee()) {
-                this.props.addEmployee(this.state);
+                AddEmployeeHelper(this.state);
+                this.setState({name: '', age: ''})
             }
         } else {
             if (!this.state.name) {
@@ -98,6 +100,12 @@ class CreateEmployee extends React.Component {
 }
 
 
+const mapStateToProps = state => {
+    return {
+        employees: state.employee.data,
+    };
+}
+
 function matchDispatchToProps(dispatch) {
     return bindActionCreators(
         {
@@ -107,4 +115,4 @@ function matchDispatchToProps(dispatch) {
     );
 }
 
-export default connect(null, matchDispatchToProps)(CreateEmployee);
+export default connect(mapStateToProps, matchDispatchToProps)(CreateEmployee);

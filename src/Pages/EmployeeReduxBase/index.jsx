@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import CreateEmployee from 'Components/ReduxEmployees/AddEmployees'
+import CreateEmployee from 'Components/ReduxEmployees/AddEmployees';
 import ListItems from 'Components/ReduxEmployees/ListItems';
+import GoBack from 'Components/GoHome'
 
 class EmployeeReduxBase extends React.Component {
 
@@ -13,6 +13,7 @@ class EmployeeReduxBase extends React.Component {
 
         return (
             <div className="content employee">
+                <GoBack />
                 <div className="row">
                     <div className="col-6">
                         <h3>Employees</h3>
@@ -30,10 +31,4 @@ class EmployeeReduxBase extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        employees: state.employee.data,
-    };
-}
-
-export default connect(mapStateToProps, null)(EmployeeReduxBase);
+export default EmployeeReduxBase;

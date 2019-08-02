@@ -49,18 +49,20 @@ function App() {
 				</div>
 			</nav>
 			<div className="container py-2">
-				<Route
-					path="/home/"
-					component={Home} />
-				<Route
-					path="/employees/"
-					component={EmployeeBase} />
-				<Route
-					path="/redux-employees/"
-					component={EmployeeReduxBase} />
-				<Route
-					path="/contact/"
-					component={ContactUs} />
+				<Switch>
+					<Route
+						path="/home"
+						component={Home} />
+					<Route
+						path="/employees"
+						component={EmployeeBase} />
+					<Route
+						path="/redux-employees"
+						component={EmployeeReduxBase} />
+					<Route
+						path="/contact"
+						component={ContactUs} />
+				</Switch>
 			</div>
 		</Router>
 	);
